@@ -7,11 +7,17 @@ import './App.css';
 import { Navbar, Footer, Sidebar, ThemeSettings } from './components';
 import { Ecommerce, Orders, Calendar, Employees, Stacked, Pyramid, Customers, Kanban, Area, Bar, Pie, Financial, ColorPicker, Line, ColorMapping, Editor } from './pages'
 
-const activeMenu = true;
+
 // sidemenu - show if false, hide if true
 
+import { useStateContext } from './contexts/ContextProvider';
+
 const App = () => {
-  
+  // calling it as a hook and no need to use the static activeMenu
+  const { activeMenu } = useStateContext();
+  // const activeMenu = true;
+
+
   return (
     <BrowserRouter>
       <div className='flex relative dark:bg-main-dark-bg'>
